@@ -1,0 +1,47 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        kotlin_version = '1.8.0'
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://jitpack.io" }
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+String storageUrl = System.env.FLUTTER_STORAGE_BASE_URL ?: "https://storage.googleapis.com"
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://maven.mapmyindia.com/repository/mapmyindia/' }
+
+        maven { url "https://jitpack.io" }
+//        maven {
+//            url "https://jitpack.io"
+//            credentials { username authToken }
+//        }
+        maven {
+            url rootDir.absolutePath + '/flutter-test/flutter'
+        }
+
+        maven {
+            url "https://storage.googleapis.com/download.flutter.io"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,84 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'maven-publish'
+}
+
+android {
+    namespace 'com.example.flutterig'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.flutterig"
+        minSdk 22
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+//        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+//    sourceSets.main {
+//        jniLibs.srcDirs += 'src/main/jni'
+//    }
+
+
+    publishing {
+
+
+//    singleVariant('release') {
+//        withSourcesJar()
+//    }
+//        multipleVariants {
+//            allVariants()
+//            withJavadocJar()
+//        }
+        singleVariant('release') {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation libs.core.ktx
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.constraintlayout
+
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.test.ext.junit
+    androidTestImplementation libs.espresso.core
+
+//    implementation 'com.github.jitpack:gradle-simple:1.1'
+//    implementation 'com.github.Dixzz:sas:1.1'
+
+//    implementation('com.gitlab.satyam10:FlutterModuleLinker:+')
+//    implementation('com.gitlab.satyam10:flutter-test:1.0')
+//    implementation('com.gitlab.satyam10:flutter-test:v1')
+//    implementation 'com.github.satyam-tummoc:test-source-fl:-SNAPSHOT'
+//    glpat-uChas2kbkukVGbyEyVea
+    implementation project(path: ":flutter-test")
+
+}

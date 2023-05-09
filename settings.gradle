@@ -1,0 +1,3 @@
+rootProject.name = "FlutterIg"
+include ':app'
+include ':flutter-test'

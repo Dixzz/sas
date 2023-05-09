@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FlutterIg" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.FlutterIg" parent="Base.Theme.FlutterIg" />
+    <style name="NormalTheme" parent="Base.Theme.FlutterIg" />
+    <style name="LaunchTheme" parent="Base.Theme.FlutterIg" />
+</resources>
