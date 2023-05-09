@@ -21,7 +21,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -72,7 +72,8 @@ dependencies {
     androidTestImplementation libs.espresso.core
 
 //    implementation 'com.github.jitpack:gradle-simple:1.1'
-//    implementation 'com.github.Dixzz:sas:1.1'
+//    implementation 'com.github.Dixzz.sas:flutter_test:1.0@aar'
+//    implementation 'com.github.Dixzz.sas:flutter-test:1.0@aar'
 
 //    implementation('com.gitlab.satyam10:FlutterModuleLinker:+')
 //    implementation('com.gitlab.satyam10:flutter-test:1.0')

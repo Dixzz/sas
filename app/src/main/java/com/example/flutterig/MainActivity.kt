@@ -14,8 +14,14 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         binding.gawd.setOnClickListener {
             FlutterConfig.setKey("12345")
+            try {
+                Class.forName("io.flutter.embedding.engine.FlutterEngine")
+            } catch (e: Exception){
+                e.printStackTrace()
+            }
             FlutterConfig.open(this)
         }
     }

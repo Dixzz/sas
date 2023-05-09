@@ -28,10 +28,7 @@ allprojects {
         maven { url 'https://maven.mapmyindia.com/repository/mapmyindia/' }
 
         maven { url "https://jitpack.io" }
-//        maven {
-//            url "https://jitpack.io"
-//            credentials { username authToken }
-//        }
+
         maven {
             url rootDir.absolutePath + '/flutter-test/flutter'
         }
